@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="/">
+    <p><b>Set a the post-filter value</b></p>
+    <p><input type="radio" name="answer" value="all">all<Br>
+        <input type="radio" name="answer" value="my_posts">my posts<Br>
+        <input type="radio" name="answer" value="my_posts_subscribe">my posts and my posts of subscribe</p>
+    <p><input type="submit"></p>
+</form>
+
+<table border="1">
+    <tr>
+        <th>user</th>
+        <th>content</th>
+    </tr>
+    {% for item in object_list %}
+    <tr>
+        <th>{{ item.user }}</th>
+        <th>{{ item.content }}</th>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock content %}
