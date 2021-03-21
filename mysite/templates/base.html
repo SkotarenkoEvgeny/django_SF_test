@@ -8,6 +8,7 @@
 <header>
     <h1><a href="/">Blog</a></h1>
     {% if user.is_authenticated %}
+    <span class="text-muted">{{ errors }}</span>
     <div>
         <h3 display="inline" padding="30px">User = {{ user.username }}</h3>
         <a href="{% url 'logout' %}">logout</a>
